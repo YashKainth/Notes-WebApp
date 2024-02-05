@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Afacad", sans-serif;
+}
+
+body {
+  background: #6a8d73;
+}
+
+::selection {
+  color: #fff;
+  background: #6a8d73;
+}
+
+.note-main {
+  margin: 50px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
+
+.note-main li {
+  height: 250px;
+  list-style: none;
+  background: #ffe8c2;
+  border-radius: 5px;
+  padding: 15px 20px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.new-note,
+.plus,
+.placeholder,
+.options,
+.menu li,
+.popup,
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-note {
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.new-note .plus {
+  height: 80px;
+  width: 80px;
+  justify-content: center;
+  color: #6a8d73;
+  font-size: 40px;
+  border-radius: 50%;
+  border: 2px dashed #6a8d73;
+}
+
+.new-note p {
+  color: #6a8d73;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.note-main .notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notes .description {
+  max-height: 165px;
+  overflow-y: auto;
+}
+
+.notes p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.notes span {
+  display: block;
+  margin-top: 5px;
+  color: #252525;
+  font-size: 16px;
+}
+
+.notes .placeholder {
+  padding-top: 10px;
+  border-top: 1px solid #6a8d73;
+}
+
+.placeholder span {
+  color: #252525;
+  font-size: 14px;
+}
+
+.placeholder .options i {
+  color: #6a8d73;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.options {
+  position: relative;
+}
+
+.options .menu {
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  padding: 5px 0;
+  background: #ffe8c2;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.options.show .menu {
+  transform: scale(1);
+}
+
+.options .menu li {
+  height: 25px;
+  font-size: 16px;
+  padding: 17px 15px;
+  cursor: pointer;
+  border-radius: 0;
+  background: #ffe8c2;
+  justify-content: flex-start;
+}
+
+.menu li:hover {
+  background: #6a8d73;
+  color: #ffe8c2;
+}
+
+.menu li:hover i {
+  background: #6a8d73;
+  color: #ffe8c2;
+}
+
+.menu li i {
+  padding-right: 8px;
+}
+
+.popupbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: #6a8d7360;
+}
+
+.popupbox .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 400px;
+  width: 100%;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+.popupbox,
+.popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.popupbox.show,
+.popupbox.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popupbox.show .popup {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .content {
+  width: calc(100% - 15px);
+  background: #ffe8c2;
+  border-radius: 5px;
+}
+
+.popup .content header {
+  border-bottom: 1px solid #252525;
+  padding: 15px 25px;
+}
+
+.content header p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content header i {
+  color: #252525;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.content form {
+  margin: 15px 25px 35px;
+}
+
+.content form .row {
+  margin-bottom: 20px;
+}
+
+form .row label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.content form :where(input, textarea) {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: 17px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid #252525;
+}
+
+.content form textarea {
+  height: 150px;
+  resize: none;
+  padding: 8px 15px;
+}
+
+.content form button {
+  width: 100%;
+  height: 50px;
+  background: #6a8d73;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #ffe8c2;
+  border-radius: 4px;
+  font-size: 17px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Web-App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="popupbox">
+      <div class="popup">
+        <div class="content">
+          <header>
+            <p>Add a new note</p>
+            <i class="fa-solid fa-times"></i>
+          </header>
+          <form action="#">
+            <div class="row title">
+              <label> Title </label>
+              <input type="text" />
+            </div>
+            <div class="row description">
+              <label> Description </label>
+              <textarea></textarea>
+            </div>
+            <button>Add Note</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="note-main">
+      <li class="new-note">
+        <div class="plus"><i class="fa-solid fa-plus"></i></div>
+        <p>Add new note</p>
+      </li>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
