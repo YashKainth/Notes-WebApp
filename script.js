@@ -83,6 +83,21 @@ function deleteNote(noteId) {
 }
 
 function updateNote(noteId, title, filterDesc) {
+  console.log("Updating note:", noteId, title, filterDesc);
+  let description = filterDesc.replaceAll("<br/>", "\r\n");
+  updateId = noteId;
+  console.log("updateId:", updateId);
+  addBox.click();
+  isUpdate = true;
+  console.log("isUpdate:", isUpdate);
+  titleTag.value = title;
+  descTag.value = description;
+  popupTitle.innerText = "Update a Note";
+  addBtn.innerText = "Update Note";
+}
+
+
+/* function updateNote(noteId, title, filterDesc) {
   let description = filterDesc.replaceAll("<br/>", "\r\n");
   updateId = noteId;
   addBox.click();
@@ -91,7 +106,7 @@ function updateNote(noteId, title, filterDesc) {
   descTag.value = description;
   popupTitle.innerText = "Update a Note";
   addBtn.innerText = "Update Note";
-}
+} */
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
