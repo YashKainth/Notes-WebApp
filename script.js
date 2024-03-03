@@ -85,8 +85,8 @@ function deleteNote(noteId) {
 function updateNote(noteId, title, filterDesc) {
   let description = filterDesc.replaceAll("<br/>", "\r\n");
   updateId = noteId;
-  isUpdate = true;
   addBox.click();
+  isUpdate = true;
   titleTag.value = title;
   descTag.value = description;
   popupTitle.innerText = "Update a Note";
